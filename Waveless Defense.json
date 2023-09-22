@@ -13,9 +13,9 @@
     "folderProject": true,
     "orientation": "default",
     "packageName": "com.example.gamename",
-    "pixelsRounding": false,
+    "pixelsRounding": true,
     "projectUuid": "b476c752-efc0-490b-a695-3a9ca3d7d715",
-    "scaleMode": "linear",
+    "scaleMode": "nearest",
     "sizeOnStartupMode": "adaptWidth",
     "templateSlug": "",
     "useExternalSourceFiles": false,
@@ -63,7 +63,152 @@
     "currentPlatform": "GDevelop JS platform"
   },
   "resources": {
-    "resources": [],
+    "resources": [
+      {
+        "alwaysLoaded": false,
+        "file": "TheRoom.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "TheRoom.png",
+        "smoothed": false,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "Player1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Player1.png",
+        "smoothed": false,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "Player2.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Player2.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "Player3.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Player3.png",
+        "smoothed": false,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "Player4.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Player4.png",
+        "smoothed": false,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "Player5.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Player5.png",
+        "smoothed": false,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "Gun1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "Gun1.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "../Wave Defense Game/Gun1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "..\\Wave Defense Game\\Gun1.png",
+        "smoothed": false,
+        "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/Gun1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\Gun1.png",
+        "smoothed": false,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/Player1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\Player1.png",
+        "smoothed": false,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/Player2.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\Player2.png",
+        "smoothed": false,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/Player3.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\Player3.png",
+        "smoothed": false,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/Player4.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\Player4.png",
+        "smoothed": false,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/TheRoom.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\TheRoom.png",
+        "smoothed": false,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/Player5.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\Player5.png",
+        "smoothed": false,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/Bullet.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\Bullet.png",
+        "smoothed": false,
+        "userAdded": true
+      }
+    ],
     "resourceFolders": []
   },
   "objects": [],
@@ -72,11 +217,16 @@
   "layouts": [
     {
       "__REFERENCE_TO_SPLIT_OBJECT": true,
-      "referenceTo": "/layouts/untitled-scene"
+      "referenceTo": "/layouts/main-scene"
     }
   ],
   "externalEvents": [],
-  "eventsFunctionsExtensions": [],
+  "eventsFunctionsExtensions": [
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/eventsFunctionsExtensions/firebullet"
+    }
+  ],
   "externalLayouts": [],
   "externalSourceFiles": []
 }
