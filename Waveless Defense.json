@@ -16,7 +16,7 @@
     "pixelsRounding": true,
     "projectUuid": "b476c752-efc0-490b-a695-3a9ca3d7d715",
     "scaleMode": "nearest",
-    "sizeOnStartupMode": "adaptWidth",
+    "sizeOnStartupMode": "",
     "templateSlug": "",
     "useExternalSourceFiles": false,
     "version": "1.0.0",
@@ -207,6 +207,60 @@
         "name": "assets\\Bullet.png",
         "smoothed": false,
         "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/Ghost1.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\Ghost1.png",
+        "smoothed": false,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/Ghost2.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\Ghost2.png",
+        "smoothed": false,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/Ghost3.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\Ghost3.png",
+        "smoothed": false,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/Ghost4.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\Ghost4.png",
+        "smoothed": false,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/Enemy_Spawn_Location.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\Enemy_Spawn_Location.png",
+        "smoothed": false,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/Collision Masks.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets\\Collision Masks.png",
+        "smoothed": false,
+        "userAdded": true
       }
     ],
     "resourceFolders": []
@@ -222,6 +276,10 @@
   ],
   "externalEvents": [],
   "eventsFunctionsExtensions": [
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/eventsFunctionsExtensions/health"
+    },
     {
       "__REFERENCE_TO_SPLIT_OBJECT": true,
       "referenceTo": "/eventsFunctionsExtensions/firebullet"
