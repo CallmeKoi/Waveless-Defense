@@ -386,7 +386,26 @@
   },
   "objects": [],
   "objectsGroups": [],
-  "variables": [],
+  "variables": [
+    {
+      "name": "Settings",
+      "type": "structure",
+      "children": [
+        {
+          "folded": true,
+          "name": "Music",
+          "type": "number",
+          "value": 50
+        },
+        {
+          "folded": true,
+          "name": "Sound",
+          "type": "number",
+          "value": 50
+        }
+      ]
+    }
+  ],
   "layouts": [
     {
       "__REFERENCE_TO_SPLIT_OBJECT": true,

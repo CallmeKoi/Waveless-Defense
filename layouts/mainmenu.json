@@ -18,11 +18,36 @@
     "gridColor": 10401023,
     "gridAlpha": 0.8,
     "snap": true,
-    "zoomFactor": 0.5729200402687192,
+    "zoomFactor": 0.4250759122257236,
     "windowMask": false
   },
-  "objectsGroups": [],
-  "variables": [],
+  "objectsGroups": [
+    {
+      "name": "Buttons",
+      "objects": [
+        {
+          "name": "Play"
+        },
+        {
+          "name": "Settings"
+        },
+        {
+          "name": "Quit"
+        },
+        {
+          "name": "Back"
+        }
+      ]
+    }
+  ],
+  "variables": [
+    {
+      "folded": true,
+      "name": "TempSettings",
+      "type": "string",
+      "value": ""
+    }
+  ],
   "instances": [
     {
       "angle": 355,
@@ -113,7 +138,7 @@
       "name": "SoundVolume",
       "persistentUuid": "1a3d2a71-f932-4277-bc88-69d6282e17d1",
       "width": 128,
-      "x": 1248,
+      "x": 1216,
       "y": 148,
       "zOrder": 6,
       "numberProperties": [],
@@ -129,7 +154,7 @@
       "name": "MusicVolume",
       "persistentUuid": "9c0ade48-4967-46f0-be33-a07934160bae",
       "width": 128,
-      "x": 1248,
+      "x": 1216,
       "y": 244,
       "zOrder": 7,
       "numberProperties": [],
@@ -145,7 +170,7 @@
       "name": "SoundSlider",
       "persistentUuid": "1ea8f858-28a9-4e09-b2db-b383b9ae68c7",
       "width": 384,
-      "x": 1120,
+      "x": 1088,
       "y": 192,
       "zOrder": 8,
       "numberProperties": [],
@@ -161,7 +186,7 @@
       "name": "MusicSlider",
       "persistentUuid": "ee30a938-cc78-45b4-92d3-47d80e732714",
       "width": 384,
-      "x": 1120,
+      "x": 1088,
       "y": 291,
       "zOrder": 9,
       "numberProperties": [],
@@ -177,7 +202,7 @@
       "name": "Back",
       "persistentUuid": "726b9e02-88fd-4793-8caa-f23a02b72286",
       "width": 96,
-      "x": 1263,
+      "x": 1231,
       "y": 353,
       "zOrder": 10,
       "numberProperties": [],
@@ -193,7 +218,7 @@
       "name": "SettingMarker",
       "persistentUuid": "9ad08a0e-1554-46d0-b9bd-686c80a48102",
       "width": 768,
-      "x": 928,
+      "x": 896,
       "y": 0,
       "zOrder": 11,
       "numberProperties": [],
@@ -228,7 +253,20 @@
       "tags": "",
       "type": "BitmapText::BitmapTextObject",
       "variables": [],
-      "effects": [],
+      "effects": [
+        {
+          "effectType": "Outline",
+          "name": "Hover",
+          "doubleParameters": {
+            "padding": 2,
+            "thickness": 2
+          },
+          "stringParameters": {
+            "color": "255;255;255"
+          },
+          "booleanParameters": {}
+        }
+      ],
       "behaviors": [
         {
           "name": "ButtonFSM",
@@ -259,7 +297,20 @@
       "tags": "",
       "type": "BitmapText::BitmapTextObject",
       "variables": [],
-      "effects": [],
+      "effects": [
+        {
+          "effectType": "Outline",
+          "name": "Hover",
+          "doubleParameters": {
+            "padding": 2,
+            "thickness": 2
+          },
+          "stringParameters": {
+            "color": "255;255;255"
+          },
+          "booleanParameters": {}
+        }
+      ],
       "behaviors": [
         {
           "name": "ButtonFSM",
@@ -352,7 +403,20 @@
       "tags": "",
       "type": "BitmapText::BitmapTextObject",
       "variables": [],
-      "effects": [],
+      "effects": [
+        {
+          "effectType": "Outline",
+          "name": "Hover",
+          "doubleParameters": {
+            "padding": 2,
+            "thickness": 2
+          },
+          "stringParameters": {
+            "color": "255;255;255"
+          },
+          "booleanParameters": {}
+        }
+      ],
       "behaviors": [
         {
           "name": "ButtonFSM",
@@ -383,7 +447,20 @@
       "tags": "",
       "type": "BitmapText::BitmapTextObject",
       "variables": [],
-      "effects": [],
+      "effects": [
+        {
+          "effectType": "Outline",
+          "name": "Hover",
+          "doubleParameters": {
+            "padding": 2,
+            "thickness": 2
+          },
+          "stringParameters": {
+            "color": "255;255;255"
+          },
+          "booleanParameters": {}
+        }
+      ],
       "behaviors": [
         {
           "name": "ButtonFSM",
@@ -686,122 +763,321 @@
           "parameters": [
             "SettingMarker"
           ]
-        }
-      ]
-    },
-    {
-      "type": "BuiltinCommonInstructions::Standard",
-      "conditions": [
+        },
         {
           "type": {
-            "value": "ButtonStates::ButtonFSM::IsClicked"
+            "value": "LireFichierTxt"
           },
           "parameters": [
-            "Settings",
-            "ButtonFSM",
+            "\"Settings\"",
+            "\"Settings\"",
+            "",
+            "TempSettings"
+          ]
+        },
+        {
+          "type": {
+            "value": "JSONToGlobalVariableStructure"
+          },
+          "parameters": [
+            "VariableString(TempSettings)",
+            "Settings"
+          ]
+        },
+        {
+          "type": {
+            "value": "PanelSpriteSlider::PanelSpriteSlider::SetValue"
+          },
+          "parameters": [
+            "SoundSlider",
+            "=",
+            "GlobalVariable(Settings.Sound)",
             ""
           ]
-        }
-      ],
-      "actions": [
+        },
         {
           "type": {
-            "value": "Tween::TweenCameraPosition"
+            "value": "PanelSpriteSlider::PanelSpriteSlider::SetValue"
           },
           "parameters": [
-            "",
-            "\"CameraMove\"",
-            "SettingMarker.CenterX()",
-            "CameraCenterY()",
-            "",
-            "1000",
-            "\"easeInOutQuad\""
-          ]
-        }
-      ]
-    },
-    {
-      "type": "BuiltinCommonInstructions::Standard",
-      "conditions": [
-        {
-          "type": {
-            "value": "ButtonStates::ButtonFSM::IsClicked"
-          },
-          "parameters": [
-            "Back",
-            "ButtonFSM",
-            ""
-          ]
-        }
-      ],
-      "actions": [
-        {
-          "type": {
-            "value": "Tween::TweenCameraPosition"
-          },
-          "parameters": [
-            "",
-            "\"CameraMove\"",
-            "Marker.CenterX()",
-            "CameraCenterY()",
-            "",
-            "1000",
-            "\"easeInOutQuad\""
-          ]
-        }
-      ]
-    },
-    {
-      "type": "BuiltinCommonInstructions::Standard",
-      "conditions": [
-        {
-          "type": {
-            "value": "ButtonStates::ButtonFSM::IsClicked"
-          },
-          "parameters": [
-            "Play",
-            "ButtonFSM",
-            ""
-          ]
-        }
-      ],
-      "actions": [
-        {
-          "type": {
-            "value": "Scene"
-          },
-          "parameters": [
-            "",
-            "\"Main scene\"",
+            "MusicSlider",
+            "=",
+            "GlobalVariable(Settings.Music)",
             ""
           ]
         }
       ]
     },
     {
-      "type": "BuiltinCommonInstructions::Standard",
-      "conditions": [
+      "colorB": 228,
+      "colorG": 176,
+      "colorR": 74,
+      "creationTime": 0,
+      "name": "Menu maneuver",
+      "source": "",
+      "type": "BuiltinCommonInstructions::Group",
+      "events": [
         {
-          "type": {
-            "value": "ButtonStates::ButtonFSM::IsClicked"
-          },
-          "parameters": [
-            "Quit",
-            "ButtonFSM",
-            ""
+          "colorB": 228,
+          "colorG": 176,
+          "colorR": 74,
+          "creationTime": 0,
+          "folded": true,
+          "name": "Buttons Effects",
+          "source": "",
+          "type": "BuiltinCommonInstructions::Group",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "ButtonStates::ButtonFSM::IsHovered"
+                  },
+                  "parameters": [
+                    "Buttons",
+                    "ButtonFSM",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "EffectCapability::EffectBehavior::EnableEffect"
+                  },
+                  "parameters": [
+                    "Buttons",
+                    "Effect",
+                    "\"Hover\"",
+                    "yes"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": true,
+                    "value": "ButtonStates::ButtonFSM::IsHovered"
+                  },
+                  "parameters": [
+                    "Buttons",
+                    "ButtonFSM",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "EffectCapability::EffectBehavior::EnableEffect"
+                  },
+                  "parameters": [
+                    "Buttons",
+                    "Effect",
+                    "\"Hover\"",
+                    "no"
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "colorB": 228,
+          "colorG": 176,
+          "colorR": 74,
+          "creationTime": 0,
+          "folded": true,
+          "name": "Settings Slider",
+          "source": "",
+          "type": "BuiltinCommonInstructions::Group",
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "PanelSpriteSlider::PanelSpriteSlider::IsBeingDragged"
+                  },
+                  "parameters": [
+                    "SoundSlider",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ModVarGlobal"
+                  },
+                  "parameters": [
+                    "Settings.Sound",
+                    "=",
+                    "SoundSlider.Value()"
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "value": "PanelSpriteSlider::PanelSpriteSlider::IsBeingDragged"
+                  },
+                  "parameters": [
+                    "MusicSlider",
+                    ""
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "value": "ModVarGlobal"
+                  },
+                  "parameters": [
+                    "Settings.Music",
+                    "=",
+                    "MusicSlider.Value()"
+                  ]
+                }
+              ]
+            }
+          ],
+          "parameters": []
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "ButtonStates::ButtonFSM::IsClicked"
+              },
+              "parameters": [
+                "Play",
+                "ButtonFSM",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Scene"
+              },
+              "parameters": [
+                "",
+                "\"Main scene\"",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "ButtonStates::ButtonFSM::IsClicked"
+              },
+              "parameters": [
+                "Quit",
+                "ButtonFSM",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Quit"
+              },
+              "parameters": [
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "ButtonStates::ButtonFSM::IsClicked"
+              },
+              "parameters": [
+                "Settings",
+                "ButtonFSM",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Tween::TweenCameraPosition"
+              },
+              "parameters": [
+                "",
+                "\"CameraMove\"",
+                "SettingMarker.CenterX()",
+                "CameraCenterY()",
+                "",
+                "1000",
+                "\"easeInOutQuad\""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "ButtonStates::ButtonFSM::IsClicked"
+              },
+              "parameters": [
+                "Back",
+                "ButtonFSM",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "Tween::TweenCameraPosition"
+              },
+              "parameters": [
+                "",
+                "\"CameraMove\"",
+                "Marker.CenterX()",
+                "CameraCenterY()",
+                "",
+                "1000",
+                "\"easeInOutQuad\""
+              ]
+            },
+            {
+              "type": {
+                "value": "EcrireFichierTxt"
+              },
+              "parameters": [
+                "\"Settings\"",
+                "\"Settings\"",
+                "GlobalVarToJSON(Settings)"
+              ]
+            }
           ]
         }
       ],
-      "actions": [
-        {
-          "type": {
-            "value": "Quit"
-          },
-          "parameters": [
-            ""
-          ]
-        }
-      ]
+      "parameters": []
     }
   ],
   "layers": [
