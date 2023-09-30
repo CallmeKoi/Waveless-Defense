@@ -1,13 +1,13 @@
 {
-  "b": 209,
+  "b": 37,
   "disableInputWhenNotFocused": true,
   "mangledName": "MainMenu",
   "name": "MainMenu",
-  "r": 209,
+  "r": 24,
   "standardSortMethod": true,
   "stopSoundsOnStartup": true,
   "title": "",
-  "v": 209,
+  "v": 20,
   "uiSettings": {
     "grid": true,
     "gridType": "rectangular",
@@ -50,7 +50,7 @@
   ],
   "instances": [
     {
-      "angle": 355,
+      "angle": 356,
       "customSize": true,
       "depth": 1,
       "height": 177,
@@ -221,6 +221,21 @@
       "x": 896,
       "y": 0,
       "zOrder": 11,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "Transition",
+      "name": "Transition",
+      "persistentUuid": "f7c6faa2-46d6-4e0f-8a5d-41f787669d1b",
+      "width": 0,
+      "x": 960,
+      "y": -128,
+      "zOrder": 12,
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
@@ -805,6 +820,17 @@
             "GlobalVariable(Settings.Music)",
             ""
           ]
+        },
+        {
+          "type": {
+            "value": "ZoomCamera"
+          },
+          "parameters": [
+            "",
+            "1.5",
+            "\"Transition\"",
+            ""
+          ]
         }
       ]
     },
@@ -962,6 +988,38 @@
               "parameters": [
                 "Play",
                 "ButtonFSM",
+                ""
+              ]
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "value": "FlashTransitionPainter::FlashTransitionPainter::PaintEffect"
+              },
+              "parameters": [
+                "Transition",
+                "FlashTransitionPainter",
+                "\"0;0;0\"",
+                "1",
+                "\"Circular\"",
+                "\"Forward\"",
+                "",
+                ""
+              ]
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "value": "FlashTransitionPainter::FlashTransitionPainter::PaintEffectIsEnd"
+              },
+              "parameters": [
+                "Transition",
+                "FlashTransitionPainter",
                 ""
               ]
             }
@@ -1155,6 +1213,38 @@
           "booleanParameters": {}
         }
       ]
+    },
+    {
+      "ambientLightColorB": 200,
+      "ambientLightColorG": 200,
+      "ambientLightColorR": 200,
+      "camera3DFarPlaneDistance": 10000,
+      "camera3DFieldOfView": 45,
+      "camera3DNearPlaneDistance": 0.1,
+      "followBaseLayerCamera": false,
+      "isLightingLayer": false,
+      "isLocked": false,
+      "name": "Transition",
+      "renderingType": "",
+      "visibility": true,
+      "cameras": [],
+      "effects": [
+        {
+          "effectType": "Scene3D::HemisphereLight",
+          "name": "3D Light",
+          "doubleParameters": {
+            "elevation": 45,
+            "intensity": 1,
+            "rotation": 0
+          },
+          "stringParameters": {
+            "groundColor": "64;64;64",
+            "skyColor": "255;255;255",
+            "top": "Y-"
+          },
+          "booleanParameters": {}
+        }
+      ]
     }
   ],
   "behaviorsSharedData": [
@@ -1169,6 +1259,10 @@
     {
       "name": "Effect",
       "type": "EffectCapability::EffectBehavior"
+    },
+    {
+      "name": "FlashTransitionPainter",
+      "type": "FlashTransitionPainter::FlashTransitionPainter"
     },
     {
       "name": "Flippable",

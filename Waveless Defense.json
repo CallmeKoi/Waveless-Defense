@@ -384,7 +384,43 @@
     ],
     "resourceFolders": []
   },
-  "objects": [],
+  "objects": [
+    {
+      "assetStoreId": "",
+      "name": "Transition",
+      "tags": "",
+      "type": "PrimitiveDrawing::Drawer",
+      "variables": [],
+      "effects": [],
+      "behaviors": [
+        {
+          "name": "FlashTransitionPainter",
+          "type": "FlashTransitionPainter::FlashTransitionPainter",
+          "Timer": 1,
+          "Color": "255;255;255",
+          "Type": "",
+          "Direction": "",
+          "MaxOpacity": 255
+        }
+      ],
+      "fillOpacity": 255,
+      "outlineSize": 1,
+      "outlineOpacity": 255,
+      "fillColor": {
+        "b": 0,
+        "g": 0,
+        "r": 0
+      },
+      "outlineColor": {
+        "b": 0,
+        "g": 0,
+        "r": 0
+      },
+      "absoluteCoordinates": false,
+      "clearBetweenFrames": true,
+      "antialiasing": "none"
+    }
+  ],
   "objectsGroups": [],
   "variables": [
     {
@@ -418,6 +454,10 @@
   ],
   "externalEvents": [],
   "eventsFunctionsExtensions": [
+    {
+      "__REFERENCE_TO_SPLIT_OBJECT": true,
+      "referenceTo": "/eventsFunctionsExtensions/flashtransitionpainter"
+    },
     {
       "__REFERENCE_TO_SPLIT_OBJECT": true,
       "referenceTo": "/eventsFunctionsExtensions/panelspriteslider"
